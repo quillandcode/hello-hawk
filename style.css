@@ -154,8 +154,12 @@ a { text-decoration: none; }
 }
 
 .home-logo {
-    height: 85px; 
+    height: 85px;
     width: auto;
+    /* Safety nets to prevent huge images */
+    max-width: 200px; 
+    object-fit: contain;
+    /* The glow */
     filter: drop-shadow(0 0 8px rgba(0, 247, 255, 0.4)); 
 }
 
@@ -379,4 +383,5 @@ a { text-decoration: none; }
     .control-bar {
         flex-wrap: wrap;
     }
+
 }
