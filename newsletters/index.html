@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission Control | Mr. Roberson</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="dashboard-body">
+
+    <div class="server-bg-layer-1"></div>
+    <div class="server-bg-layer-2"></div>
+    <div class="vignette"></div>
+
+    <div class="dashboard-container">
+        
+        <header class="dashboard-header">
+            
+            <div class="header-top-row">
+                <div class="brand-section">
+                    <img src="https://cmsv2-assets.apptegy.net/uploads/21073/logo/23887/Rock_Hill_High_School_Logo.png" alt="Logo" class="dash-logo">
+                    <div class="title-group">
+                        <h2 class="code-title" style="font-size: 1.8rem;">Hello, Hawk!</h2>
+                        <div class="teacher-meta">Mr. Roberson // Computer Science</div>
+                    </div>
+                </div>
+
+                <div class="course-list-display">
+                    <span class="course-badge">AP Comp Sci A</span>
+                    <span class="course-badge">Honors CS 1</span>
+                    <span class="course-badge">Adv. Cloud Computing</span>
+                </div>
+            </div>
+
+            <div class="control-bar">
+                <label for="newsletter-select" class="terminal-label">>> Select_Transmission:</label>
+                <select id="newsletter-select" class="terminal-select" onchange="loadNewsletter()">
+                    <option value="12-15_to_12-19.html" selected>Dec 15 - Dec 19</option>
+                </select>
+                
+                <a href="/" class="back-link">[ Return to Root ]</a>
+            </div>
+
+        </header>
+
+        <main class="iframe-wrapper">
+            <iframe id="newsletter-frame" src="12-15_to_12-19.html" title="Newsletter Content"></iframe>
+        </main>
+
+    </div>
+
+    <script>
+        function loadNewsletter() {
+            const selector = document.getElementById('newsletter-select');
+            const iframe = document.getElementById('newsletter-frame');
+            iframe.src = selector.value;
+        }
+
+        loadNewsletter();
+    </script>
+
+</body>
+</html>

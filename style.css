@@ -1,0 +1,353 @@
+/* --- 1. VARIABLES & CONFIGURATION --- */
+:root {
+    --bg-dark: #050508;             /* Deep black-blue */
+    --bg-panel: rgba(10, 10, 16, 0.85); /* Semi-transparent panel bg */
+    --text-bright: #ffffff;
+    --text-dim: #b0b0cf;
+    --electric-blue: #00f7ff;       /* The main neon color */
+    
+    /* Glow Effects */
+    --text-glow: 0 0 5px var(--electric-blue), 0 0 15px rgba(0, 247, 255, 0.5);
+    --box-glow: 0 0 10px rgba(0, 247, 255, 0.3), inset 0 0 10px rgba(0, 247, 255, 0.1);
+    --strong-box-glow: 0 0 15px rgba(0, 247, 255, 0.6), inset 0 0 15px rgba(0, 247, 255, 0.2);
+}
+
+/* --- 2. GLOBAL RESET & TYPOGRAPHY --- */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark); /* Ensures page is dark even before lights load */
+    color: var(--text-dim);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+h1, h2, h3, .btn-icon { font-family: 'Roboto Mono', monospace; }
+
+/* --- 3. SERVER ROOM BACKGROUND (The Fixed Particles) --- */
+/* Layer 0: Sits above the body color, but behind content */
+.server-bg-layer-1, .server-bg-layer-2 {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0; 
+}
+
+/* Steady blue/white grid lights */
+.server-bg-layer-1 {
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255,255,255,0.2) 2px, transparent 3px),
+        radial-gradient(circle at 30% 60%, rgba(0,247,255,0.3) 2px, transparent 3px),
+        radial-gradient(circle at 70% 40%, rgba(255,255,255,0.2) 2px, transparent 3px),
+        radial-gradient(circle at 90% 80%, rgba(0,247,255,0.3) 2px, transparent 3px);
+    background-size: 150px 150px;
+    animation: serverPulse 6s ease-in-out infinite alternate;
+}
+
+/* Blinking red/green status lights */
+.server-bg-layer-2 {
+    background-image: 
+        radial-gradient(circle at 50% 30%, rgba(255, 50, 50, 0.6) 3px, transparent 4px), /* Red */
+        radial-gradient(circle at 20% 70%, rgba(50, 255, 50, 0.6) 3px, transparent 4px), /* Green */
+        radial-gradient(circle at 80% 10%, rgba(50, 255, 50, 0.6) 3px, transparent 4px); /* Green */
+    background-size: 300px 300px;
+    animation: serverPulse 2s ease-in-out infinite alternate-reverse;
+}
+
+/* The pulse animation */
+@keyframes serverPulse {
+    0% { opacity: 0.4; transform: scale(1); }
+    100% { opacity: 0.9; transform: scale(1.1); }
+}
+
+/* Vignette: Darkens corners to focus attention */
+.vignette {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    background: radial-gradient(circle at center, transparent 50%, rgba(5, 5, 8, 0.9) 100%);
+}
+
+/* --- 4. MAIN CONTENT CONTAINER --- */
+.main-terminal-container {
+    position: relative;
+    z-index: 2; /* Important: Sits on top of lights and vignette */
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: var(--bg-panel);
+    border: 1px solid rgba(0, 247, 255, 0.2);
+    box-shadow: var(--box-glow);
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+}
+
+/* --- 5. HEADER & NAV --- */
+.terminal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.code-title {
+    margin: 0;
+    color: var(--electric-blue);
+    font-size: 2.5rem;
+    letter-spacing: -1px;
+    text-shadow: var(--text-glow);
+}
+
+/* The Blinking Cursor */
+.blinking-cursor {
+    animation: blink 1s step-end infinite;
+}
+@keyframes blink { 
+    50% { opacity: 0; } 
+}
+
+.tagline {
+    margin: 5px 0 0 0;
+    font-style: italic;
+    color: var(--text-bright);
+    opacity: 0.8;
+}
+
+/* The Neon Button */
+.neon-button {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--electric-blue);
+    border: 2px solid var(--electric-blue);
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-family: 'Roboto Mono', monospace;
+    transition: all 0.3s ease;
+    box-shadow: var(--box-glow);
+    background: rgba(0, 247, 255, 0.05);
+}
+
+.neon-button:hover {
+    background-color: var(--electric-blue);
+    color: var(--bg-dark);
+    box-shadow: var(--strong-box-glow);
+}
+
+.btn-icon { margin-right: 10px; }
+
+/* --- 6. SECTIONS & CLASSES --- */
+.glowing-separator {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--electric-blue), transparent);
+    margin: 40px 0;
+    opacity: 0.5;
+}
+
+.section-title {
+    color: var(--electric-blue);
+    margin-bottom: 20px;
+    text-shadow: 0 0 8px rgba(0, 247, 255, 0.5);
+}
+
+.bio-text {
+    font-size: 1.1rem;
+    color: var(--text-bright);
+    max-width: 800px;
+}
+
+/* Class Modules */
+.classes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.class-module {
+    background: rgba(0,0,0,0.5);
+    border: 1px solid rgba(0, 247, 255, 0.3);
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.class-module:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--strong-box-glow);
+    border-color: var(--electric-blue);
+}
+
+.class-module h3 {
+    color: var(--text-bright);
+    margin-top: 0;
+    border-bottom: 1px solid rgba(0, 247, 255, 0.2);
+    padding-bottom: 10px;
+}
+
+/* --- 7. RESPONSIVE --- */
+@media (max-width: 768px) {
+    .terminal-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .neon-button {
+        width: 100%;
+        justify-content: center;
+    }
+    .main-terminal-container {
+        margin: 20px 10px;
+        padding: 20px;
+    }
+}
+
+/* =========================================
+   DASHBOARD / NEWSLETTER PAGE STYLES
+   ========================================= */
+
+/* Lock the body to 100vh so we don't get double scrollbars */
+.dashboard-body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; 
+}
+
+/* The main container sits above the background lights */
+.dashboard-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    position: relative;
+    height: 100%;
+}
+
+/* --- Header Styling --- */
+.dashboard-header {
+    background-color: var(--bg-panel);
+    border-bottom: 1px solid var(--electric-blue);
+    padding: 15px 30px;
+    box-shadow: var(--box-glow);
+    flex-shrink: 0; /* Prevents header from shrinking when content is long */
+}
+
+.header-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.brand-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.dash-logo {
+    height: 50px;
+    filter: drop-shadow(0 0 5px rgba(0, 247, 255, 0.4));
+}
+
+.teacher-meta {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+}
+
+/* Course Badges */
+.course-list-display {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.course-badge {
+    background: rgba(0, 247, 255, 0.1);
+    border: 1px solid rgba(0, 247, 255, 0.3);
+    color: var(--electric-blue);
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-family: 'Roboto Mono', monospace;
+    box-shadow: 0 0 5px rgba(0, 247, 255, 0.1);
+}
+
+/* --- Dropdown Bar --- */
+.control-bar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.terminal-label {
+    font-family: 'Roboto Mono', monospace;
+    color: var(--text-bright);
+    font-size: 0.9rem;
+}
+
+.terminal-select {
+    background-color: #000;
+    color: var(--electric-blue);
+    border: 1px solid var(--electric-blue);
+    padding: 5px 10px;
+    font-family: 'Roboto Mono', monospace;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+}
+
+.terminal-select:focus {
+    box-shadow: var(--box-glow);
+}
+
+.back-link {
+    margin-left: auto; /* Pushes it to the far right */
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-family: 'Roboto Mono', monospace;
+    opacity: 0.7;
+}
+.back-link:hover { opacity: 1; color: var(--electric-blue); }
+
+/* --- Iframe Wrapper --- */
+.iframe-wrapper {
+    flex-grow: 1; /* Takes up all remaining height */
+    background-color: white; /* Newsletters are usually white */
+    position: relative;
+    width: 100%;
+}
+
+#newsletter-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* Mobile Adjustments for Dashboard */
+@media (max-width: 768px) {
+    .header-top-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .course-list-display {
+        width: 100%;
+    }
+    .control-bar {
+        flex-wrap: wrap;
+    }
+}
