@@ -266,6 +266,11 @@ a { text-decoration: none; }
 
 .dash-logo {
     height: 50px;
+    width: auto;
+    /* The Safety Net */
+    max-width: 100px; 
+    object-fit: contain;
+    /* The Glow */
     filter: drop-shadow(0 0 5px rgba(0, 247, 255, 0.4));
 }
 
@@ -383,5 +388,4 @@ a { text-decoration: none; }
     .control-bar {
         flex-wrap: wrap;
     }
-
 }
