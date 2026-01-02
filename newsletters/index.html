@@ -53,9 +53,10 @@
 
     <script>
         function loadNewsletter() {
+            var cacheBuster = Math.floor(Math.random() * 10000000) + 1;
             const selector = document.getElementById('newsletter-select');
             const iframe = document.getElementById('newsletter-frame');
-            iframe.src = selector.value;
+            iframe.src = selector.value + "?r=" + cacheBuster;
         }
 
         loadNewsletter();
