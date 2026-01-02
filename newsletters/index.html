@@ -7,15 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VCTYXN4T2Z"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-VCTYXN4T2Z');
-</script>
 <body class="dashboard-body">
 
     <div class="server-bg-layer-1"></div>
@@ -45,7 +36,8 @@
             <div class="control-bar">
                 <label for="newsletter-select" class="terminal-label">>> Select_Transmission:</label>
                 <select id="newsletter-select" class="terminal-select" onchange="loadNewsletter()">
-                    <option value="12-15_to_12-19.html" selected>Dec 15 - Dec 19</option>
+                    <option value="12-15_to_12-19.html">Dec 15 - Dec 19</option>
+                    <option value="12-29_to_1-2.html" selected>Dec 29 - Jan 2</option>
                 </select>
                 
                 <a href="../" class="back-link">[ Return to Root ]</a>
@@ -54,7 +46,7 @@
         </header>
 
         <main class="iframe-wrapper">
-            <iframe id="newsletter-frame" src="12-15_to_12-19.html" title="Newsletter Content"></iframe>
+            <iframe id="newsletter-frame" title="Newsletter Content"></iframe>
         </main>
 
     </div>
@@ -70,5 +62,4 @@
     </script>
 
 </body>
-
 </html>
