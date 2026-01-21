@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly CS Update: Jan 20-23</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    
+    <style>
+        /* Additional local styles for this specific newsletter */
+        .system-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .system-table thead tr {
+            background-color: rgba(0, 247, 255, 0.1);
+            border-bottom: 2px solid var(--electric-blue);
+        }
+
+        .system-table th {
+            padding: 12px 15px;
+            text-align: left;
+            color: var(--electric-blue);
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .system-table tbody tr {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: background 0.3s ease;
+        }
+
+        .system-table tbody tr:hover {
+            background-color: rgba(0, 247, 255, 0.05);
+        }
+
+        .system-table td {
+            padding: 12px 15px;
+            color: var(--text-dim);
+            vertical-align: top;
+        }
+
+        /* Styles for the "Focus Areas" list inside class sections */
+        .focus-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 15px;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.9rem;
+            color: #d0d0e0;
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 4px;
+            border-left: 2px solid var(--text-dim);
+        }
+        
+        .focus-list li {
+            margin-bottom: 5px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .focus-list li::before {
+            content: '>';
+            color: var(--electric-blue);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        /* Progress bar styles */
+        .progress-bar-container {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(0, 247, 255, 0.3);
+            border-radius: 4px;
+            padding: 15px;
+            margin: 30px 0;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .progress-label {
+            color: var(--electric-blue);
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(0, 247, 255, 0.4);
+            border-radius: 3px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--electric-blue) 0%, rgba(0, 247, 255, 0.6) 100%);
+            box-shadow: 0 0 10px var(--electric-blue);
+            animation: progressGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes progressGlow {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.3); }
+        }
+
+        /* Terminal output styling */
+        .terminal-output {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(0, 247, 255, 0.3);
+            border-left: 4px solid var(--electric-blue);
+            padding: 20px;
+            margin: 25px 0;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.9rem;
+            color: #00ff00;
+            line-height: 1.6;
+        }
+
+        .command-prompt { color: var(--electric-blue); margin-bottom: 10px; display: block; }
+        .success-text { color: #00ff00; }
+        .warn-text { color: #ffcc00; }
+
+        /* Highlight box for the "Accountability" section */
+        .alert-box {
+            background-color: rgba(255, 50, 50, 0.05);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 50, 50, 0.3);
+            border-left: 4px solid #ff3333;
+            margin: 40px 0;
+        }
+        .alert-box h3 { color: #ff3333; margin-top: 0; }
+        .alert-box strong { color: #ff8888; }
+    </style>
+</head>
+
+<body>
+    <div class="server-bg-layer-1"></div>
+    <div class="server-bg-layer-2"></div>
+    <div class="vignette"></div>
+
+    <div class="newsletter-container">
+
+        <div class="update-header">
+            <div class="date-range">>> LOG: JAN_20 - JAN_23</div>
+            <h1>Weekly Computer Science Update</h1>
+
+            <div class="intro-text">
+                <p><strong>>> STATUS: ANALYSIS_COMPLETE</strong></p>
+                <p>
+                    Last week provided valuable insight into how students are progressing across our Computer Science courses. 
+                    In several areas, students demonstrated strong technical ability. In others, we identified opportunities for growth that go beyond coding syntax 
+                    and focus more on <strong>problem interpretation, attention to detail, and effective use of class time</strong>.
+                </p>
+                <p>
+                    This update is intended to keep you informed about where students are leveling up, where challenges are emerging, and what instructional adjustments are being made to best support their learning.
+                </p>
+            </div>
+        </div>
+
+        <h2>>> System_Log: Course_Performance</h2>
+
+        <div class="class-section">
+            <h3>AP Computer Science A</h3>
+            <p>
+                Students recently completed a full-length practice AP exam, offering a helpful snapshot of current readiness. 
+                On the multiple-choice portion, scores ranged roughly from <strong>50% to 95%</strong>, with two students achieving nearly perfect results. This confirms that many students have developed strong foundational knowledge.
+            </p>
+            <p>
+                The Free Response (FRQ) portion, however, revealed a consistent challenge: students often struggled to fully follow instructions and meet all stated requirements. 
+                Importantly, this does not indicate a lack of coding ability, but rather a gap in <strong>problem-solving and interpretation skills</strong>. 
+            </p>
+            <p>
+                As we move into Unit 3, instruction will emphasize slowing down, analyzing problems thoroughly, and asking clarifying questions.
+            </p>
+            
+            <ul class="focus-list">
+                <li>Reading and interpreting problems carefully</li>
+                <li>Matching solutions precisely to requirements</li>
+                <li>Independent practice outside of class (via new coding platform)</li>
+            </ul>
+        </div>
+
+        <div class="class-section">
+            <h3>Honors Computer Science 1</h3>
+            <p>
+                CS1 students are making excellent progress with <strong>functions in Python</strong>. Syntax understanding is strong across the board. 
+                The primary challenge now is translating word problems into complete, well-structured solutions—specifically identifying variables, returning values correctly, and formatting output.
+            </p>
+            <p>
+                In many cases, student logic is sound, but small formatting details (spacing, punctuation) prevent solutions from passing automated grading. 
+                These details matter in real-world technical work. The Unit 9 Study Guide will be released later this week.
+            </p>
+            
+            <ul class="focus-list">
+                <li>Careful attention to output formatting</li>
+                <li>Breaking down word problems step by step</li>
+                <li>Beginning the Unit 9 Study Guide</li>
+            </ul>
+        </div>
+
+        <div class="class-section">
+            <h3>Advanced Cloud Computing (AWS)</h3>
+            <p>
+                Students began the <strong>AWS AI/ML Foundations</strong> course. Overall, they are following the material well. 
+                However, to ensure grades meaningfully represent learning—rather than the ability to retry knowledge checks indefinitely—I am adjusting the grading policy.
+            </p>
+            <p>
+                I will no longer use built-in AWS knowledge checks as standalone grades. Instead, module grades will be based on:
+            </p>
+            <ul>
+                <li>Completion of required AWS content</li>
+                <li>Accuracy and effort on supplemental assignments designed/assessed by me</li>
+            </ul>
+            <p>
+                This approach ensures support is provided where it is genuinely needed as we explore task automation and intelligent assistants.
+            </p>
+        </div>
+
+        <h2>>> Execution_Plan: Current_Cycle</h2>
+        <table class="system-table">
+            <thead>
+                <tr>
+                    <th>Target Sector</th>
+                    <th>Primary Directive</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Problem Solving</strong></td>
+                    <td>Careful interpretation of requirements vs. rushing to code.</td>
+                </tr>
+                <tr>
+                    <td><strong>Precision</strong></td>
+                    <td>Exact matching of inputs, outputs, and formatting constraints.</td>
+                </tr>
+                <tr>
+                    <td><strong>Accountability</strong></td>
+                    <td>Independent practice and ownership of learning outcomes.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="alert-box">
+            <h3>>> SYSTEM ALERT: Classroom Focus & Integrity</h3>
+            <p>
+                One challenge that became more pronounced last week was student distraction during class time. 
+                When students choose to use Computer Science time to study for other courses or complete unrelated work, it creates two significant issues:
+            </p>
+            <ol style="color: var(--text-dim);">
+                <li>They miss instruction and do not complete work designed to be done during class.</li>
+                <li>Unfinished work becomes homework, often resulting in zeros that cannot be made up once a unit closes.</li>
+            </ol>
+            <p>
+                This has been most noticeable in <strong>Advanced Cloud Computing</strong>. Moving forward, classroom expectations will be enforced more consistently. 
+                District-approved consequences will be applied when necessary—not as punishment, but as preparation for professional environments where disengagement has real consequences.
+            </p>
+            <p>
+                <strong>Note:</strong> Students will not be permitted to take district-funded certification exams unless they can demonstrate genuine understanding of the material.
+            </p>
+        </div>
+
+        <div class="terminal-output">
+            <span class="command-prompt">$ run diagnostic_check.exe -all</span>
+            <div class="success-text">
+                > Analyzing code syntax... [STABLE]<br>
+                > Checking logic structure... [OPTIMIZATION REQUIRED]<br>
+            </div>
+            <div class="warn-text">
+                > Detecting distractions... [WARNING: FOCUS DRIFT DETECTED]<br>
+            </div>
+            <div class="success-text">
+                > Re-calibrating expectations... [DONE]<br>
+                > System ready for new inputs.
+            </div>
+        </div>
+
+        <div class="progress-bar-container">
+            <div class="progress-label">>> SEMESTER PROGRESS: Week 3 of 18</div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 16%;"></div>
+            </div>
+        </div>
+
+        <div class="signature">
+            These skills are essential not only for success in Computer Science courses, but also for long-term success in technical fields.<br><br>
+            Thank you for your partnership.<br><br>
+            <strong>// Mr. Rob</strong><br>
+            <span style="font-size: 0.8rem; opacity: 0.7;">>> END_OF_LINE</span>
+        </div>
+
+        <div class="newsletter-footer">
+            Rock Hill High School | Computer Science Department
+        </div>
+
+    </div>
+</body>
+</html>
