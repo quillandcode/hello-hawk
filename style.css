@@ -507,3 +507,41 @@ strong { color: var(--text-bright); }
     color: #666;
     font-family: 'Roboto Mono', monospace;
 }
+
+/* Protocol Cards (replaces crowded table) */
+.protocol-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(0, 247, 255, 0.2);
+    border-left: 4px solid var(--electric-blue);
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+.protocol-card h3 {
+    margin-bottom: 10px;
+}
+
+.protocol-card p {
+    margin: 8px 0;
+}
+
+/* Extra spacing for clarity */
+.protocol-note {
+    margin-top: 30px;
+    padding: 15px 20px;
+    background: rgba(0, 247, 255, 0.05);
+    border-left: 3px solid var(--electric-blue);
+    border-radius: 6px;
+}
+
+/* Positive Integrity Highlight (Yellow/Orange) */
+.integrity-positive {
+    background-color: rgba(255, 200, 0, 0.08);
+    border: 1px solid rgba(255, 200, 0, 0.4);
+    border-left: 4px solid #ffc400;
+}
+
+.integrity-positive h3 {
+    color: #ffc400;
+}
