@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{PAGE_TITLE}}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="newsletter-container">
+
+        <div class="update-header">
+            <div class="date-range">>> LOG: {{DATE_RANGE}}</div>
+            <h1>System Status: {{MAIN_HEADLINE}}</h1>
+            <p class="intro-text">
+                <strong>>> SYSTEM_RECOVERY_STATUS: {{STATUS_LEVEL}}...</strong><br>
+                {{INTRO_PARAGRAPH}}
+            </p>
+        </div>
+
+        <h2>>> System_Event / {{SECTION_1_TITLE}}</h2>
+        <div class="class-section">
+            {{SECTION_1_CONTENT}}
+        </div>
+
+        <h2>>> Module_Updates / Instruction</h2>
+        <div class="class-section">
+            {{SECTION_2_CONTENT}}
+        </div>
+
+        <div class="highlight-box integrity-positive">
+            <h3>>> System_Expectation: {{HIGHLIGHT_TITLE}}</h3>
+            {{HIGHLIGHT_CONTENT}}
+        </div>
+
+        <h2>>> System_Protocols / Tutorials & Testing</h2>
+        <div class="protocol-card">
+            <h3>Morning Tutorials</h3>
+            <p><strong>Daily @ 8:15 AM – First Bell</strong></p>
+            <p>Open support for homework, questions, and concept clarification.</p>
+        </div>
+
+        <div class="protocol-card">
+            <h3>After School (Tuesdays)</h3>
+            <p><strong>Tuesdays Only</strong></p>
+            <p>Used for additional support, retakes, and makeups.</p>
+        </div>
+
+        <div class="protocol-card">
+            <h3>Retakes & Makeups</h3>
+            <p><strong>Tuesdays After School</strong></p>
+            <p>
+                Must be scheduled in advance and prioritized.<br>
+                <span class="cmd-highlight">No last-minute requests</span>
+            </p>
+        </div>
+
+        <h2>>> Final_Execution_Notes</h2>
+        <p>{{CLOSING_THOUGHTS}}</p>
+        <p>Thank you for your continued support.</p>
+
+        <div class="signature">
+            // Mr. Roberson<br>
+            <span style="font-size: 0.8rem; opacity: 0.7;">>> END_OF_LINE</span>
+        </div>
+
+        <div class="newsletter-footer">
+            Rock Hill High School | Computer Science Department
+        </div>
+    </div>
+    <script src="../script.js"></script>
+</body>
+</html>
